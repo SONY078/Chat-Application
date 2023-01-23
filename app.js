@@ -45,7 +45,7 @@ io.on("connection",(socket)=>
             const removedValue = removeUser.map((val)=>{
                 return val.name;
             })
-            io.emit('chat-message',`--- ${removedValue} left the chat ---`);
+            io.emit('chat-message',`----- ${removedValue} left the chat -----`);
 
         })
         socket.on("chat-message",(message)=>
