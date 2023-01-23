@@ -1,0 +1,63 @@
+body
+{
+    background-color: rgb(13, 13, 50);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: pink;
+}
+#list
+{
+    text-align: right;
+}
+.container
+{
+    width: 30%;
+    height: max-content;
+    border: 2px solid white;
+    border-radius: 20px;
+}
+.chat-container
+{
+    height: max-content;
+    background-color:rgb(25, 25, 75);
+    margin: 50px;
+    padding: 20px;
+    border-radius: 15px;
+}
+#intro
+{
+    background-color: pink;
+    color: rgb(26, 24, 24);
+    height: 80px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border: none;
+    border-radius: 17px 17px 0px 0px;
+}
+form
+{
+    padding-top: 50px;
+}
+input
+{
+   width: 200px;
+   height: 26px;
+   border-radius: 5px;
+   border: none;
+}
+li:nth-child(even)
+{
+    color: aqua;
+}
+button
+{
+    width: 100px;
+    height: 26px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(240, 44, 76);
+    color: white;
+}

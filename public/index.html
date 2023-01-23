@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script>
+        const name = prompt("please enter your name");
+    </script>
+    <title>Chat Room</title>
+</head>
+<body>
+    <div class="container">
+        <div id="intro">
+            <h1>Chat App</h1>
+        </div>
+        <div class="chat-container">
+            
+                <ul id="messages" type="none"></ul>
+        <form action="">
+            <input type="text"  id='m' autocomplete="off" placeholder="type to send a message..." required>
+            <button>Send</button>
+        </form>
+        </div>
+    
+    </div>
+
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+        const socket = io();
+        socket.emit("joining-chat",name);
+        console.log("Joining chat:",name);
+        $('form').submit(function(e)
+        {
+            e.preventDefault();
+            console.log("Joined the chat :",name);
+            socket.emit('chat-message',(name + ':'+ $('#m').val()));
+            $('#messages').append($('<li id = "list">').text('you : ' + $('#m').val()));
+                $('#m').val('');
+                return false;
+        })
+
+        socket.on("chat-message",function(msg)
+        {
+            $('#messages').append($('<li>').text(msg));
+        })
+    </script>
+</body>
+</html>
